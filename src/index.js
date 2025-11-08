@@ -22,7 +22,7 @@ let fibWasm;
   try {
     statusEl.textContent = "Carregando módulo Wasm…";
     const Module = await createModule({
-      locateFile: (p) => `/dist/${p}`,
+      locateFile: (p) => `../dist/${p}`,
     });
     fibWasm = Module.cwrap("fib", "number", ["number"]);
     statusEl.textContent = "Módulo carregado ✅";
