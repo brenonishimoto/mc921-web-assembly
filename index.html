@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <title>Fibonacci — JS × Wasm (C)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body class="grid">
+    <h1>Fibonacci — JavaScript × WebAssembly (C)</h1>
+    <div>
+      <strong>Status:</strong>
+      <span id="status" class="muted">Carregando módulo...</span>
+    </div>
+
+    <div class="card grid">
+      <div class="row">
+        <label for="n">n:</label>
+        <input id="n" type="number" value="30" min="0" style="width: 100px" />
+        <label for="iters">iterações:</label>
+        <input
+          id="iters"
+          type="number"
+          value="10"
+          min="1"
+          style="width: 100px"
+        />
+      </div>
+
+      <div class="row">
+        <button id="btnJS" class="primary">Executar JS</button>
+        <button id="btnWasm" class="primary" disabled>Executar Wasm</button>
+        <button id="btnCompare" class="ghost" disabled>
+          Comparar JS × Wasm
+        </button>
+      </div>
+
+      <div id="resJS" class="kpi"></div>
+      <div id="resWasm" class="kpi"></div>
+      <div id="resCompare" class="kpi"></div>
+
+      <div class="muted">
+        Use n≈30–40 para notar diferenças. Aumente “iterações” para reduzir
+        ruído.
+      </div>
+    </div>
+
+    <div class="card grid">
+      <label>Console</label>
+      <pre id="out" class="out">Pronto para logs…</pre>
+    </div>
+
+    <script type="module" src="./src/index.js"></script>
+  </body>
+</html>
