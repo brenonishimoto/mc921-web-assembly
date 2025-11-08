@@ -7,10 +7,6 @@ Projeto de demonstração de webassembly para um seminário de MC921
 - Emscripten SDK instalado e ativado na sessão do terminal.
 
 ## Build
-### Windows (PowerShell)
-```powershell
-.\build.ps1
-
-### Linux/Bash
+### Linux (Bash)
 chmod +x build.sh
 ./build.sh
