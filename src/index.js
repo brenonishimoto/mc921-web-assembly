@@ -23,7 +23,7 @@ let fibWasm;
     statusEl.textContent = "Carregando módulo Wasm…";
     const wasmBaseURL = new URL("../dist/", import.meta.url);
     const Module = await createModule({
-      locateFile: (p) => new URL(p, wasmBaseURL).href,
+      locateFile: (p) => `../dist/${p}`,
     });
     fibWasm = Module.cwrap("fib", "number", ["number"]);
     statusEl.textContent = "Módulo carregado ✅";
